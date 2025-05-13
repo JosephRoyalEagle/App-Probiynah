@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Password visibility toggle
-    const passwordInput = document.getElementById('password');
+    const passwordInput = document.getElementById('password-pro-app');
     const togglePassword = document.getElementById('togglePassword');
     if (passwordInput && togglePassword) {
         const eyeIcon = togglePassword.querySelector('svg');
@@ -191,21 +191,33 @@ document.addEventListener('DOMContentLoaded', () => {
         togglePassword.addEventListener('mousedown', e => e.preventDefault());
     }
 
-    // Form logic as before
-    const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const numero = document.getElementById('numero').value;
-        const password = document.getElementById('password').value;
+    const passwordConfirmInput = document.getElementById('pass-confirm-pro-app');
+    const togglePasswordConfirm = document.getElementById('toggleConfirmPassword');
+    if (passwordConfirmInput && togglePasswordConfirm) {
+        const eyeIcon = togglePasswordConfirm.querySelector('svg');
+        const pupil = eyeIcon.querySelector('.pupil');
+        const slash = eyeIcon.querySelector('.slash');
 
-        console.log('Numero:', numero);
-        console.log('Mot de passe:', password);
+        togglePasswordConfirm.addEventListener('click', () => {
+            const isPassword = passwordConfirmInput.type === 'password';
+            passwordConfirmInput.type = isPassword ? 'text' : 'password';
+            // Animate icon: show/hide slash across the eye
+            if (!isPassword) {
+                slash.style.display = 'none';
+                pupil.setAttribute('opacity', '0.55');
+                togglePasswordConfirm.title = "Afficher le mot de passe";
+                togglePasswordConfirm.setAttribute("aria-label", "Afficher le mot de passe");
+            } else {
+                slash.style.display = '';
+                pupil.setAttribute('opacity', '0.34');
+                togglePasswordConfirm.title = "Masquer le mot de passe";
+                togglePasswordConfirm.setAttribute("aria-label", "Masquer le mot de passe");
+            }
+        });
 
-        loginForm.classList.add('form-pulse');
-        setTimeout(() => {
-            loginForm.classList.remove('form-pulse');
-        }, 600);
-    });
+        // Prevents loosing focus when clicking icon
+        togglePasswordConfirm.addEventListener('mousedown', e => e.preventDefault());
+    }
 });
 
 // Loading animation
