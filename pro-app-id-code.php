@@ -20,6 +20,7 @@
             <img src="assets/img/LOGOPB.png" alt="Logo Probiynah">
         </div>
         <h2>Vérification d'identité</h2>
+        <p class="text-center text-success">Un code vous a été envoyé par SMS au numéro <?php echo maskPhone("0748820709"); ?>. Utilisez-le pour confirmer votre identité.</p>
         <form id="loginForm">
             <div class="form-group">
                 <label for="code-sms-pro-app">Code:</label>
@@ -28,6 +29,8 @@
             <button id="id-verify-send-btn" class="id-verify-send-btn" type="button">Continuer</button>
         </form>
         <div class="login-links">
+            <a href="pro-app-id-code-resend.php" class="forgot-pass">Code non reçu, renvoyer?</a>
+            <span class="links-separator">|</span>
             <a href="index.php" class="forgot-pass">Retour à l'accueil</a>
         </div>
     </div>
