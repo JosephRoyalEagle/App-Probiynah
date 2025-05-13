@@ -22,13 +22,13 @@
         <h2>Connexion</h2>
         <form id="loginForm">
             <div class="form-group">
-                <label for="numero">Numéro:</label>
-                <input type="text" id="numero" class="numero" name="numero" placeholder="0748896587" minlength="10" maxlength="10" required>
+                <label for="phone-pro-app">Numéro:</label>
+                <input type="text" id="phone-pro-app" class="phone-pro-app" name="phone-pro-app" placeholder="0748896587" minlength="10" maxlength="10" required>
             </div>
             <div class="form-group password-group">
-                <label for="password">Mot de passe:</label>
+                <label for="password-pro-app">Mot de passe:</label>
                 <div class="password-wrapper">
-                    <input type="password" id="password" name="password" placeholder="*********" minlength="4" maxlength="100" required>
+                    <input type="password" id="password-pro-app" name="password-pro-app" placeholder="*********" minlength="4" maxlength="100" required>
                     <button type="button" id="togglePassword" tabindex="-1" aria-label="Afficher le mot de passe" class="eye-toggle" title="Afficher le mot de passe">
                         <svg id="eyeIcon" width="22" height="22" viewBox="0 0 22 22" fill="none">
                             <path class="eye" d="M1.8 11C3.6 6.2 8 3 11 3c3.1 0 7.4 3.2 9.2 8-1.8 4.8-6.1 8-9.2 8-3 0-7.4-3.2-9.2-8z" stroke="#f3951f" stroke-width="2" fill="none"/>

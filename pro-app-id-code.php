@@ -8,7 +8,7 @@
     <?php
         require "head.php";
     ?>
-    <title>Réinitialisation d'accès - Probiynah App</title>
+    <title>Vérification d'identité - Probiynah App</title>
 </head>
 <body>
     <?php
@@ -19,13 +19,13 @@
         <div class="logo">
             <img src="assets/img/LOGOPB.png" alt="Logo Probiynah">
         </div>
-        <h2>Réinitialisation d'accès</h2>
+        <h2>Vérification d'identité</h2>
         <form id="loginForm">
             <div class="form-group">
-                <label for="phone-pro-app">Numéro:</label>
-                <input type="text" id="phone-pro-app" class="phone-pro-app" name="phone-pro-app" placeholder="0748896587" minlength="10" maxlength="10" required>
+                <label for="code-sms-pro-app">Code:</label>
+                <input type="text" id="code-sms-pro-app" class="code-sms-pro-app" name="code-sms-pro-app" placeholder="65877" minlength="6" maxlength="6" required>
             </div>
-            <button id="pass-forgot-send-btn" class="pass-forgot-send-btn" type="button">Continuer</button>
+            <button id="id-verify-send-btn" class="id-verify-send-btn" type="button">Continuer</button>
         </form>
         <div class="login-links">
             <a href="index.php" class="forgot-pass">Retour à l'accueil</a>
