@@ -53,10 +53,10 @@
 
             <button type="submit" class="citrus-submit-btn" tabindex="0">
                 <span>Créer un compte</span>
-                        </button>
-            <div class="form-actions">
-                <a href="index.php" class="form-alt-action"><i class="fa-solid fa-right-to-bracket"></i> Se connecter</a>
-                <a href="https://www.probiynah.com" class="form-alt-action"><i class="fa-solid fa-globe"></i> Accéder au site</a>
+            </button>
+            <div class="form-links">
+                <a href="index.php" class="text-link"><i class="fa-solid fa-right-to-bracket"></i> Se connecter</a>
+                <a href="https://www.probiynah.com" class="text-link"><i class="fa-solid fa-globe"></i> Accéder au site</a>
             </div>
             <div class="form-success-banner" id="successMsg" style="display:none;">
                 ✅ Compte créé avec succès ! Bienvenue !
