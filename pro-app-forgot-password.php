@@ -22,8 +22,8 @@
         <h2>Réinitialisation d'accès</h2>
         <form id="loginForm">
             <div class="form-group">
-                <label for="numero">Numéro:</label>
-                <input type="text" id="numero-pro-app" class="numero-pro-app" name="numero-pro-app" placeholder="0748896587" minlength="10" maxlength="10" required>
+                <label for="phone-pro-app">Numéro:</label>
+                <input type="text" id="phone-pro-app" class="phone-pro-app" name="phone-pro-app" placeholder="0748896587" minlength="10" maxlength="10" required>
             </div>
             <button id="pass-forgot-send-btn" class="pass-forgot-send-btn" type="button">Continuer</button>
         </form>

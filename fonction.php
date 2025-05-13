@@ -104,8 +104,8 @@ function maskEmail($email) {
 }
 
 function maskPhone($phone) {
-    // Conserver les 6 premiers chiffres, remplacer les 7e à 10e par des étoiles, et ajouter le reste
-    $maskedPhone = substr($phone, 0, 8) . str_repeat('*', 4) . substr($phone, 12);
+    // Conserver les 3 premiers chiffres, remplacer les 4e à 7e par des étoiles, et ajouter le reste
+    $maskedPhone = substr($phone, 0, 3) . str_repeat('*', 4) . substr($phone, 8);
     return $maskedPhone;
     // Retourner le numéro tel quel si sa longueur n'est pas de 13 caractères
     return $phone;
