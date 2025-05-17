@@ -6,8 +6,11 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden;
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 a, a:hover, a:active, a:visited, a:focus {
@@ -37,6 +40,7 @@ a, a:hover, a:active, a:visited, a:focus {
     z-index: 1;
     position: relative;
     backdrop-filter: blur(2.5px) saturate(1.1);
+    margin: 15px auto 15px auto;
 }
 
 .logo img {

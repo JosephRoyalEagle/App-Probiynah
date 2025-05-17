@@ -1,75 +1,59 @@
-<!DOCTYPE html>
+<?php
+  require 'session-start.php';
+  require 'dbcaller/dbcaller.php';
+  require 'fonction.php';
+?>
 <html lang="fr">
-
 <head>
     <?php
-    require "sinup-head.php";
+        require "head.php";
     ?>
-    <title>Formulaire d'inscription</title>
+    <title>Inscription - Probiynah App</title>
 </head>
-
 <body>
     <?php
-    require "preloader.php";
+        require "preloader.php";
     ?>
-    <div class="sunrise-gradient-bg"></div>
-    <main class="form-container">
-
-        <form class="orange-signup-card" id="registrationForm">
-            <div class="form-branding">
-
-                <div class="logo">
-                    <img src="assets/img/LOGOPB.png" alt="Logo Probiynah">
-                </div>
-                <h1>Créez votre compte</h1>
-                <p class="form-subheading">Saisissez vos informations.</p>
+    <canvas id="animated-bg"></canvas>
+    <div class="login-container">
+        <div class="logo">
+            <img src="assets/img/LOGOPB.png" alt="Logo Probiynah">
+        </div>
+        <h2>Inscription</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="lastname-pro-app">Nom:</label>
+                <input type="text" id="lastname-pro-app" class="lastname-pro-app" name="lastname-pro-app" placeholder="Dupont" minlength="2" maxlength="50" required>
             </div>
-            <div class="form-field-group">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" placeholder="Votre nom" autocomplete="family-name" required>
-                <span class="field-error-msg"></span>
+            <div class="form-group">
+                <label for="firstname-pro-app">Prénoms:</label>
+                <input type="text" id="firstname-pro-app" class="firstname-pro-app" name="firstname-pro-app" placeholder="Jean Pierre" minlength="2" maxlength="70" required>
             </div>
-            <div class="form-field-group">
-                <label for="firstname">Prénoms</label>
-                <input type="text" id="firstname" name="firstname" placeholder="Vos prénoms" autocomplete="given-name" required>
-                <span class="field-error-msg"></span>
+            <div class="form-group">
+                <label for="phone-pro-app">Numéro:</label>
+                <input type="text" id="phone-pro-app" class="phone-pro-app" name="phone-pro-app" placeholder="0748896587" minlength="10" maxlength="10" required>
             </div>
-            <div class="form-field-group">
-                <label for="phone">Numéro de téléphone</label>
-                <input type="tel" id="phone" name="phone" placeholder="Ex: 0701020304" autocomplete="tel" required pattern="^0[1-9]\d{8}$">
-                <span class="field-error-msg"></span>
-            </div>
-            <div class="form-field-group">
-                <label for="password">Mot de passe</label>
+            <div class="form-group password-group">
+                <label for="password-pro-app">Mot de passe:</label>
                 <div class="password-wrapper">
-                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" autocomplete="new-password" required minlength="6">
-                    <button type="button" class="password-visibility" tabindex="-1" aria-label="Montrer/Masquer le mot de passe">
-                        <i class="fa-solid fa-eye"></i>
+                    <input type="password" id="password-pro-app" name="password-pro-app" placeholder="*********" minlength="4" maxlength="100" required>
+                    <button type="button" id="togglePassword" tabindex="-1" aria-label="Afficher le mot de passe" class="eye-toggle" title="Afficher le mot de passe">
+                        <svg id="eyeIcon" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path class="eye" d="M1.8 11C3.6 6.2 8 3 11 3c3.1 0 7.4 3.2 9.2 8-1.8 4.8-6.1 8-9.2 8-3 0-7.4-3.2-9.2-8z" stroke="#f3951f" stroke-width="2" fill="none"/>
+                            <circle class="pupil" cx="11" cy="11" r="3" fill="#f3951f" opacity="0.55"/>
+                            <path class="slash" d="M6 16L16 6" stroke="#c37314" stroke-width="2" stroke-linecap="round" style="display:none"/>
+                        </svg>
                     </button>
                 </div>
-                <span class="field-error-msg"></span>
-                <div class="password-meter" id="pwStrengthBar"></div>
             </div>
-
-            <button type="submit" class="citrus-submit-btn" tabindex="0">
-                <span>Créer un compte</span>
-            </button>
-            <div class="form-links">
-                <a href="index.php" class="text-link"><i class="fa-solid fa-right-to-bracket"></i> Se connecter</a>
-                <a href="https://www.probiynah.com" class="text-link"><i class="fa-solid fa-globe"></i> Accéder au site</a>
-            </div>
-            <div class="form-success-banner" id="successMsg" style="display:none;">
-                ✅ Compte créé avec succès ! Bienvenue !
-            </div>
+            <button id="signup-send-btn" class="signup-send-btn" type="button">S'inscrire</button>
         </form>
-    </main>
-    <footer class="form-footer">
-        <span>&copy; 2024 - Tous droits réservés.</span>
-    </footer>
-    <script type="module" src="assets/js/form.js"></script>
+        <div class="login-links">
+            <a href="index.php" class="go-to-site">Déjà inscrit(e)?, connectez vous!</a>
+        </div>
+    </div>
     <?php
-    require("script.php");
+        require("script.php");
     ?>
 </body>
-
 </html>
