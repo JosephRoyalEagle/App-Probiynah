@@ -139,32 +139,6 @@
                     <section class="dashboard-section">
                         <h2 class="section-title"><i class="fas fa-list-alt"></i> Liste des Produits</h2>
                         <div class="card">
-                            <div class="product-table-section">
-                                <table class="product-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Produit</th>
-                                            <th>Prix Unitaire</th>
-                                            <th>Quantité</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Smartphone Premium</td>
-                                            <td>€799.99</td>
-                                            <td>1</td>
-                                            <td>€799.99</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Smartphone Premium</td>
-                                            <td>€799.99</td>
-                                            <td>1</td>
-                                            <td>€799.99</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                     </section>
 
@@ -223,12 +197,9 @@
                                     </div>
                                 </div>
 
-                                <div class="form-actions">
+                                <div class="form-actions justify-content-center">
                                     <button type="submit" class="submit-btn">
                                         <i class="fas fa-save"></i> Enregistrer le produit
-                                    </button>
-                                    <button type="reset" class="reset-btn">
-                                        <i class="fas fa-undo"></i> Réinitialiser
                                     </button>
                                 </div>
                             </form>
@@ -236,6 +207,7 @@
                     </section>
 
                     <div class="divider"></div>
+
                     <div class="animated-buttons-container">
                         <h2>Accès Rapide</h2>
                         <div class="button-grid">
@@ -251,75 +223,66 @@
                     </div>
 
                     <div class="divider"></div>
-                    <!-- Ajoutez cette section dans le content-body -->
+
                     <section class="dashboard-section">
                         <h2 class="section-title"><i class="fas fa-user-circle"></i> Mon Profil</h2>
                         <div class="card-container">
-                            <!-- Colonne de gauche - Informations du profil -->
                             <div class="card">
                                 <div class="profile-header">
                                     <div class="profile-avatar">
-                                        <img src="https://via.placeholder.com/150" alt="Photo de profil"
-                                            id="profile-picture">
-                                        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                                        <i id="profile-picture" class="fas fa-user-circle"></i>
                                     </div>
                                     <div class="profile-info">
                                         <h3>Client</h3>
-                                        <p class="member-since">Membre depuis: 15/06/2023</p>
                                     </div>
                                 </div>
 
                                 <div class="profile-details">
                                     <ul class="info-list">
                                         <li>
-                                            <strong><i class="fas fa-envelope"></i> Email:</strong>
-                                            <span>contact@probjynah.com</span>
+                                            <strong><i class="fas fa-user"></i> Nom & prénoms:</strong>
+                                            <span>Kouassi Jean Pierre</span>
                                         </li>
                                         <li>
                                             <strong><i class="fas fa-phone"></i> Téléphone:</strong>
-                                            <span>+33 6 12 34 56 78</span>
+                                            <span>0748820709</span>
                                         </li>
                                         <li>
                                             <strong><i class="fas fa-map-marker-alt"></i> Adresse:</strong>
-                                            <span>123 Rue Example, Paris, France</span>
+                                            <span>Cocody angré, cité des arts</span>
+                                        </li>
+                                        <li>
+                                            <strong><i class="fas fa-calendar-check"></i> Inscrit(e) depuis:</strong>
+                                            <span>15/06/2023</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <!-- Colonne de droite - Formulaire d'édition -->
                             <div class="card">
                                 <h3 class="card-title"><i class="fas fa-edit"></i> Modifier le profil</h3>
                                 <form class="profile-form">
-                                    <div class="form-group">
-                                        <label for="username">Nom d'utilisateur</label>
-                                        <input type="text" id="username" value="cp2118503921" disabled>
+                                    <div class="form-group mb-3">
+                                        <label for="lastname">Nom</label>
+                                        <input type="text" id="lastname" placeholder="Kouassi">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="fullname">Nom complet</label>
-                                        <input type="text" id="fullname" value="Admin Probjynah">
+                                    <div class="form-group mb-3">
+                                        <label for="firstname">Prénoms</label>
+                                        <input type="text" id="firstname" placeholder="Jean Pierre">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" id="email" value="contact@probjynah.com">
-                                    </div>
-
-                                    <div class="form-group">
+                                    <div class="form-group mb-3">
                                         <label for="phone">Téléphone</label>
-                                        <input type="tel" id="phone" value="+33 6 12 34 56 78">
+                                        <input type="tel" id="phone" placeholder="0748820304">
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group mb-3">
                                         <label for="address">Adresse</label>
-                                        <textarea id="address" rows="2">123 Rue Example, Paris, France</textarea>
+                                        <textarea id="address" rows="2" placeholder="Cocody angré, cité des arts"></textarea>
                                     </div>
 
-                                    <div class="form-actions">
-                                        <button type="button" class="cancel-btn btn-secondary">
-                                            <i class="fas fa-times"></i> Annuler
-                                        </button>
+                                    <div class="form-actions justify-content-center">
                                         <button type="submit" class="save-btn btn-primary">
                                             <i class="fas fa-save"></i> Enregistrer
                                         </button>
@@ -328,7 +291,6 @@
                             </div>
                         </div>
                     </section>
-
 
                 </div>
             </div>
