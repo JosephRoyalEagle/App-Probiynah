@@ -4,75 +4,22 @@
         <?php
             require "head.php";
         ?>
-        <title>Administrateur - Probiynah App</title>
+        <title>Superviseur - Probiynah App</title>
     </head>
 
     <body>
         <div class="admin-container">
             <!-- Sidebar -->
-            <div class="sidebar" id="sidebar">
-                <div class="sidebar-header">
-                    <h2>Tableau de bord</h2>
-                </div>
-                <ul class="sidebar-menu">
-                    <li class="active">
-                        <a href="#"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a>
-                        <ul>
-                            <li><a href="#">Vue d'ensemble</a></li>
-                            <li><a href="#">Statistiques</a></li>
-                            <li><a href="#">Activité récente</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-users"></i><span>Utilisateurs</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-boxes"></i><span>Produits</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-shopping-cart"></i><span>Commandes</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-chart-bar"></i><span>Statistiques</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-utensils"></i><span>Restaurant</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-hotel"></i><span>Hotel</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-map"></i><span>Carte adresse</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-user"></i><span>Profil</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-calendar-check"></i><span>Reservation</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-cog"></i><span>Paramètres</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-fw fa-sign-out-alt"></i><span>Se déconnecter</span></a>
-                    </li>
-                </ul>
-            </div>
+            <?php
+                require "sidebar.php";
+            ?>
 
             <!-- Main Content -->
             <div class="main-content">
                 <!-- Header -->
-                <div class="content-header">
-                    <div class="header-left">
-                        <button class="menu-toggle" id="menuToggle">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <h1 class="page-title">Superviseur</h1>
-                    </div>
-                    <div class="user-info">
-                        <div class="user-avatar"><i class="fas fa-user"></i></div>
-                    </div>
-                </div>
+                <?php
+                    require "navbar.php";
+                ?>
 
                 <!-- Content Body -->
                 <div class="content-body">
@@ -187,33 +134,42 @@
 
                     <!-- Divider -->
                     <div class="divider"></div>
+
                     <!-- Section: Tableau des produits -->
-                    <section class="product-table-section">
+                    <section class="dashboard-section">
                         <h2 class="section-title"><i class="fas fa-list-alt"></i> Liste des Produits</h2>
-                        <table class="product-table">
-                            <thead>
-                                <tr>
-                                    <th>Produit</th>
-                                    <th>Prix Unitaire</th>
-                                    <th>Quantité</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Smartphone Premium</td>
-                                    <td>€799.99</td>
-                                    <td>1</td>
-                                    <td>€799.99</td>
-                                </tr>
-                                <!-- D’autres lignes peuvent être ajoutées dynamiquement -->
-                            </tbody>
-                        </table>
+                        <div class="card">
+                            <div class="product-table-section">
+                                <table class="product-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Produit</th>
+                                            <th>Prix Unitaire</th>
+                                            <th>Quantité</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Smartphone Premium</td>
+                                            <td>€799.99</td>
+                                            <td>1</td>
+                                            <td>€799.99</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Smartphone Premium</td>
+                                            <td>€799.99</td>
+                                            <td>1</td>
+                                            <td>€799.99</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </section>
 
                     <div class="divider"></div>
 
-                    <!-- Ajoutez cette section dans le content-body, par exemple après la section Informations Générales -->
                     <section class="dashboard-section">
                         <h2 class="section-title"><i class="fas fa-plus-circle"></i> Enregistrer un nouveau produit</h2>
                         <div class="card">

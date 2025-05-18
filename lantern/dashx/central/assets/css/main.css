@@ -1,7 +1,7 @@
 :root {
-    --primary: #4361ee;
-    --primary-light: #e6ecfe;
-    --secondary: #3f37c9;
+    --primary: #f3951f;
+    --primary-light: #f8eee2;
+    --secondary: #f18909;
     --dark: #1a1a2e;
     --light: #f8f9fa;
     --gray: #6c757d;
@@ -53,6 +53,7 @@ body {
     border-bottom: 1px solid var(--light-gray);
     height: var(--header-height);
     display: flex;
+    justify-content: start;
     align-items: center;
 }
 
@@ -61,6 +62,11 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+.sidebar-header .sidebar-logo {
+    height: 40px;
+}
+
 
 .sidebar-menu {
     padding: 20px 0;
@@ -185,6 +191,33 @@ body {
     justify-content: center;
     margin-right: 10px;
     font-weight: 600;
+}
+
+.service-client-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.user-cart-avatar {
+    height: 40px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.user-cart-avatar i{
+    font-size: 25px;
 }
 
 /* Content Body */
@@ -590,7 +623,6 @@ body {
 }
 
 .product-table-section {
-    margin-top: 40px;
     padding: 20px;
     background-color: #fff;
     border-radius: var(--border-radius);
@@ -763,7 +795,7 @@ body {
 .animated-border-button i {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--primary);
+    color: var(--dark);
     /* Icon color */
     transition: color 0.3s;
 }
