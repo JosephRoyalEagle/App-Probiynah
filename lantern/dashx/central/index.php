@@ -341,13 +341,14 @@
 
                 <div class="divider"></div>
 
+
                 <!-- SECTION PANIER -->
                 <section class="cart-section">
                     <div class="container">
                         <div class="monpannier_title">
-                         <h2>Mon Panier</h2>   
+                            <h2>Mon Panier</h2>
                         </div>
-                        
+
                         <div class="cart-table-wrapper">
                             <table class="cart-table">
                                 <thead>
@@ -392,10 +393,133 @@
                                 </tfoot>
                             </table>
                         </div>
-                        <button class="cart-order-btn">Commander</button>
+                        <button class="cart-order-btn">
+                            <i class="fas fa-shopping-cart"></i> Commander</button>
                     </div>
                 </section>
+                <div class="divider"></div>
                 <!-- Divider -->
+                <!-- SECTION CARTE ADRESSE -->
+                <section class="address-card-section">
+                    <div class="container">
+                        <h2>Carte adresse</h2>
+                        <form class="address-card-form" id="addressCardForm" autocomplete="off">
+                            <div class="acf-row">
+                                <div class="acf-group">
+                                    <label for="acf-city">Ville</label>
+                                    <select id="acf-city" name="city" required>
+                                        <option value="">Sélectionnez la ville</option>
+                                        <option value="Paris">Paris</option>
+                                        <option value="Lyon">Lyon</option>
+                                        <option value="Marseille">Marseille</option>
+                                    </select>
+                                </div>
+                                <div class="acf-group">
+                                    <label for="acf-commune">Commune</label>
+                                    <select id="acf-commune" name="commune" required>
+                                        <option value="">Sélectionnez la commune</option>
+                                        <option value="Centre">Centre</option>
+                                        <option value="Nord">Nord</option>
+                                        <option value="Sud">Sud</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="acf-row">
+                                <div class="acf-group" style="flex: 1 1 100%;">
+                                    <label for="acf-service-type">Type de service</label>
+                                    <select id="acf-service-type" name="serviceType" required>
+                                        <option value="">Sélectionnez...</option>
+                                        <option value="hotel">Réservation hôtel</option>
+                                        <option value="restaurant">Restaurant (nourriture, boisson)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Bloc Résa Hôtel -->
+                            <div id="acf-hotel-fields" style="display:none;">
+                                <div class="acf-row">
+                                    <div class="acf-group">
+                                        <label for="acf-adult">Nombre d'adulte</label>
+                                        <input type="number" id="acf-adult" min="1" max="10" value="1" required>
+                                    </div>
+                                    <div class="acf-group">
+                                        <label for="acf-child">Nombre d'enfant</label>
+                                        <input type="number" id="acf-child" min="0" max="10" value="0">
+                                    </div>
+                                </div>
+                                <div class="acf-row">
+                                    <div class="acf-group">
+                                        <label for="acf-date-in">Date d'entrée</label>
+                                        <input type="date" id="acf-date-in" required>
+                                    </div>
+                                    <div class="acf-group">
+                                        <label for="acf-time-in">Heure d'entrée</label>
+                                        <input type="time" id="acf-time-in" required>
+                                    </div>
+                                </div>
+                                <div class="acf-row">
+                                    <div class="acf-group">
+                                        <label for="acf-date-out">Date de sortie</label>
+                                        <input type="date" id="acf-date-out" required>
+                                    </div>
+                                    <div class="acf-group">
+                                        <label for="acf-time-out">Heure de sortie</label>
+                                        <input type="time" id="acf-time-out" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bloc Restaurant -->
+                            <div id="acf-restaurant-fields" style="display:none;">
+                                <div class="acf-row">
+                                    <div class="acf-group" style="flex:1 1 100%;">
+                                        <label for="acf-restaurant-command-type">Type de commande</label>
+                                        <select id="acf-restaurant-command-type" required>
+                                            <option value="">Sélectionnez...</option>
+                                            <option value="distance">Commande à distance</option>
+                                            <option value="presentiel">Commande en présentielle</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Livraison à distance -->
+                                <div id="acf-restaurant-distance" style="display:none;">
+                                    <div class="acf-row">
+                                        <div class="acf-group" style="flex:1 1 100%;">
+                                            <label for="acf-delivery-address">Adresse de livraison</label>
+                                            <input type="text" id="acf-delivery-address" placeholder="Votre adresse de livraison" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Présentiel -->
+                                <div id="acf-restaurant-presentiel" style="display:none;">
+                                    <div class="acf-row">
+                                        <div class="acf-group" style="flex:1 1 100%;">
+                                            <label for="acf-table-number">Numéro de table</label>
+                                            <select id="acf-table-number" required>
+                                                <option value="">Sélectionnez la table</option>
+                                                <option value="1">Table 1</option>
+                                                <option value="2">Table 2</option>
+                                                <option value="3">Table 3</option>
+                                                <option value="4">Table 4</option>
+                                                <option value="5">Table 5</option>
+                                                <option value="6">Table 6</option>
+                                                <!-- Ajoutez d'autres tables si besoin -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="acf-action-row">
+                                <button type="submit" class="acf-submit-btn">
+                                    <i class="fas fa-arrow-right"></i> Poursuivre</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
                 <div class="divider"></div>
                 <!-- SECTION RESTAURANTS -->
                 <section class="restaurant-section">
@@ -414,7 +538,8 @@
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">Le Gourmet</h3>
                                     <p class="restaurant-desc">Cuisine française moderne dans un cadre élégant, vins raffinés et spécialités du terroir.</p>
-                                    <button class="restaurant-choose-btn">Entrer</button>
+                                    <button class="restaurant-choose-btn">
+                                        <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
                             </div>
                             <div class="restaurant-card" data-stars="4" data-restaurant-name="La Dolce Vita" data-restaurant-desc="Saveurs italiennes : pizzas au feu de bois et pâtes fraîches dans une ambiance chaleureuse.">
@@ -425,7 +550,8 @@
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">La Dolce Vita</h3>
                                     <p class="restaurant-desc">Saveurs italiennes : pizzas au feu de bois et pâtes fraîches dans une ambiance chaleureuse.</p>
-                                    <button class="restaurant-choose-btn">Entrer</button>
+                                    <button class="restaurant-choose-btn">
+                                        <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
                             </div>
                             <div class="restaurant-card" data-stars="3" data-restaurant-name="Sushi Zen" data-restaurant-desc="Bar à sushis zen, poissons ultra frais, makis et spécialités japonaises à volonté.">
@@ -436,7 +562,8 @@
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">Sushi Zen</h3>
                                     <p class="restaurant-desc">Bar à sushis zen, poissons ultra frais, makis et spécialités japonaises à volonté.</p>
-                                    <button class="restaurant-choose-btn">Entrer</button>
+                                    <button class="restaurant-choose-btn">
+                                        <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
                             </div>
                         </div>
@@ -469,7 +596,8 @@
                                         <img src="https://images.unsplash.com/photo-1484154218962-38ffec3eaf0a?auto=format&fit=crop&w=300&q=80" alt="Lobby Élysée">
                                         <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Spa Élysée">
                                     </div>
-                                    <button class="hotel-choose-btn">Choisir</button>
+                                    <button class="hotel-choose-btn">
+                                        <i class="fas fa-check-square"></i> Choisir</button>
                                 </div>
                             </div>
                             <div class="hotel-card" data-hotel-name="Hôtel Riviera" data-hotel-address="Nice" data-hotel-desc="Face à la mer, chambres panoramiques, petit-déjeuner sous la pergola et piscine chauffée.">
@@ -488,7 +616,8 @@
                                         <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=300&q=80" alt="Piscine Riviera">
                                         <img src="https://images.unsplash.com/photo-1500534314209-0055eca6402d?auto=format&fit=crop&w=300&q=80" alt="Vue Riviera">
                                     </div>
-                                    <button class="hotel-choose-btn">Choisir</button>
+                                    <button class="hotel-choose-btn">
+                                        <i class="fas fa-check-square"></i> Choisir</button>
                                 </div>
                             </div>
                             <div class="hotel-card" data-hotel-name="Hôtel Mont Blanc" data-hotel-address="Chamonix" data-hotel-desc="Refuge de montagne avec vue sur les Alpes, cheminée cosy et spa nordique privé.">
@@ -507,7 +636,8 @@
                                         <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Salon Mont Blanc">
                                         <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=300&q=80" alt="Spa Mont Blanc">
                                     </div>
-                                    <button class="hotel-choose-btn">Choisir</button>
+                                    <button class="hotel-choose-btn">
+                                        <i class="fas fa-check-square"></i> Choisir</button>
                                 </div>
                             </div>
                         </div>

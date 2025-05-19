@@ -285,3 +285,65 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+
+// CARTE
+
+// Form logic for Carte adresse
+  const serviceType = document.getElementById('acf-service-type');
+  const hotelFields = document.getElementById('acf-hotel-fields');
+  const restaurantFields = document.getElementById('acf-restaurant-fields');
+  const commandType = document.getElementById('acf-restaurant-command-type');
+  const distFields = document.getElementById('acf-restaurant-distance');
+  const presentielFields = document.getElementById('acf-restaurant-presentiel');
+  // Hide/show fields on service type
+  serviceType.addEventListener('change', function() {
+    hotelFields.style.display = serviceType.value === 'hotel' ? '' : 'none';
+    restaurantFields.style.display = serviceType.value === 'restaurant' ? '' : 'none';
+    // Reset sub sections
+    if(serviceType.value !== 'restaurant') {
+      commandType.value = "";
+      distFields.style.display = "none";
+      presentielFields.style.display = "none";
+    }
+  });
+  // Hide/show sections for restaurant
+  commandType.addEventListener('change', function() {
+    distFields.style.display = commandType.value === 'distance' ? '' : 'none';
+    presentielFields.style.display = commandType.value === 'presentiel' ? '' : 'none';
+    // Reset fields if not selected
+    if(commandType.value !== 'distance') {
+      document.getElementById('acf-delivery-address').value = "";
+    }
+    if(commandType.value !== 'presentiel') {
+      document.getElementById('acf-table-number').value = "";
+    }
+  });
+
+  // On form submit
+  document.getElementById('addressCardForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    // Validate visible required fields (browser will handle most, but we check contextually)
+    let msg = "Données saisies :\n";
+    msg += "- Ville: " + document.getElementById('acf-city').value + "\n";
+    msg += "- Commune: " + document.getElementById('acf-commune').value + "\n";
+    msg += "- Type de service: " + serviceType.options[serviceType.selectedIndex].text + "\n";
+
+    if(serviceType.value === "hotel"){
+      msg += "- Hôtel: " +
+        document.getElementById('acf-adult').value + " adulte(s), " +
+        document.getElementById('acf-child').value + " enfant(s)\n";
+      msg += "- Du " + document.getElementById('acf-date-in').value + " à " + document.getElementById('acf-time-in').value;
+      msg += " au " + document.getElementById('acf-date-out').value + " à " + document.getElementById('acf-time-out').value + "\n";
+    } else if(serviceType.value === "restaurant") {
+      let commande = commandType.options[commandType.selectedIndex]?.text || "";
+      msg += "- Restaurant, type de commande : " + commande + "\n";
+      if(commandType.value === "distance"){
+        msg += "- Adresse livraison : " + document.getElementById('acf-delivery-address').value + "\n";
+      } else if(commandType.value === "presentiel") {
+        msg += "- Table : " + document.getElementById('acf-table-number').value + "\n";
+      }
+    }
+    alert(msg + "\n(Démo: poursuivre la suite ici !)");
+    // You can redirect or process as needed.
+  });
