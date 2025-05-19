@@ -221,7 +221,7 @@ body {
     font-weight: 600;
 }
 
-.user-cart-avatar span{
+.user-cart-avatar span {
     position: relative;
     margin-bottom: 15px;
 }
@@ -865,7 +865,7 @@ body {
 }
 
 /* Correction pour les boutons existants */
-.add-to-cart-btn, 
+.add-to-cart-btn,
 .submit-btn,
 .reset-btn,
 .save-btn,
@@ -882,14 +882,14 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.add-to-cart-btn, 
+.add-to-cart-btn,
 .submit-btn,
 .save-btn {
     background-color: var(--primary);
     color: var(--white);
 }
 
-.add-to-cart-btn:hover, 
+.add-to-cart-btn:hover,
 .submit-btn:hover,
 .save-btn:hover {
     background-color: var(--secondary);
@@ -907,12 +907,12 @@ body {
     background-color: #ddd;
 }
 
-.profile-header{
+.profile-header {
     position: relative;
     text-align: center;
 }
 
-.profile-header > .profile-avatar > i {
+.profile-header>.profile-avatar>i {
     font-size: 5rem;
     margin-bottom: 15px;
 }
@@ -942,7 +942,7 @@ body {
     border-collapse: collapse;
     margin: 0 auto;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .product-table th,
@@ -963,7 +963,11 @@ body {
 }
 
 @media (max-width: 600px) {
-    .product-table, .product-table thead, .product-table tbody, .product-table tr {
+
+    .product-table,
+    .product-table thead,
+    .product-table tbody,
+    .product-table tr {
         display: block;
         width: 100%;
     }
@@ -976,7 +980,7 @@ body {
         margin-bottom: 24px;
         background: #fff;
         border-radius: 8px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
         border: 2px solid var(--warning);
     }
 
@@ -1013,24 +1017,699 @@ body {
         padding: 2rem 1rem;
         margin-bottom: 20px;
     }
-    
+
     .button-grid {
         grid-template-columns: 1fr;
         max-width: 100%;
     }
-    
+
     .animated-border-button {
         width: 140px;
         height: 140px;
         margin: 0 auto;
     }
-    
+
     .form-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .profile-details {
         padding: 15px;
+    }
+}
+
+/* CSS NOS RESTAURANTS*/
+.restaurant-section {
+    padding: 40px 0 40px 0;
+    background: #f6f7fb;
+}
+
+.restaurant-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.restaurant-section h2 {
+    text-align: center;
+    color: #4361ee;
+    font-size: 1.28rem;
+    margin-bottom: 28px;
+    font-weight: bold;
+}
+
+.restaurant-search-bar {
+    margin: 0 auto 22px auto;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.restaurant-search-bar input[type="text"] {
+    flex: 1;
+    height: 40px;
+    border: 1.5px solid #b3c1eb;
+    padding: 0 15px;
+    font-size: 1.01rem;
+    border-radius: 22px 0 0 22px;
+    background: #fafcfd;
+    color: #273057;
+    outline: none;
+    transition: border-color 0.22s;
+}
+
+.restaurant-search-bar input[type="text"]:focus {
+    border-color: #4361ee;
+}
+
+.restaurant-search-bar button {
+    height: 40px;
+    width: 46px;
+    border: none;
+    background: #4361ee;
+    color: #fff;
+    border-radius: 0 22px 22px 0;
+    font-size: 1.14em;
+    cursor: pointer;
+    transition: background 0.18s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.restaurant-search-bar button:hover {
+    background: #3f37c9;
+}
+
+@media (max-width: 600px) {
+    .restaurant-search-bar {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .restaurant-search-bar input[type="text"] {
+        font-size: 0.95rem;
+        padding: 0 10px;
+        height: 34px;
+    }
+
+    .restaurant-search-bar button {
+        height: 34px;
+        width: 34px;
+        font-size: 1em;
+    }
+}
+
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+}
+
+.restaurant-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(80, 120, 180, 0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 370px;
+    max-width: 100%;
+    transition: transform 0.18s, box-shadow 0.22s;
+    will-change: transform;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 6px 24px rgba(60, 90, 170, 0.09);
+}
+
+.restaurant-photo {
+    position: relative;
+    width: 120px;
+    flex-shrink: 0;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #eceffe;
+    justify-content: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.restaurant-stars {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    z-index: 2;
+    display: flex;
+    gap: 2px;
+    pointer-events: none;
+}
+
+.restaurant-stars .fa-star {
+    color: #ffcf47;
+    font-size: 1.15em;
+    text-shadow: 1px 1px 2px #fff9;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.11));
+    opacity: 0.97;
+}
+
+.restaurant-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.restaurant-info {
+    padding: 18px 18px 18px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.restaurant-name {
+    font-size: 1.12rem;
+    color: #222b45;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+}
+
+.restaurant-desc {
+    color: #586377;
+    font-size: 0.97rem;
+    margin: 0 0 14px 0;
+    flex: 1;
+}
+
+.restaurant-choose-btn {
+    background: #4361ee;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.16s;
+    box-shadow: 0 2px 8px rgba(80, 120, 170, 0.07);
+    align-self: flex-start;
+}
+
+.restaurant-choose-btn:hover {
+    background: #3f37c9;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .restaurant-list {
+        gap: 12px;
+    }
+
+    .restaurant-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .restaurant-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .restaurant-card {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+        border-radius: 10px;
+    }
+
+    .restaurant-photo {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .restaurant-info {
+        padding: 16px 15px 20px 15px;
+    }
+
+    .restaurant-stars {
+        left: 10px;
+        top: 8px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 450px) {
+    .restaurant-photo {
+        height: 120px;
+    }
+
+    .restaurant-info {
+        padding: 12px 8px 16px 8px;
+    }
+
+    .restaurant-stars {
+        left: 7px;
+        top: 5px;
+        font-size: 0.92em;
+    }
+}
+
+/* SECTION NOS HOTELS*/
+.hotel-section {
+    padding: 40px 0;
+    background: #fafeff;
+}
+
+.hotel-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.hotel-section h2 {
+    text-align: center;
+    color: #4361ee;
+    font-size: 1.28rem;
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+
+.hotel-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 18px;
+    justify-content: center;
+}
+
+.hotel-card {
+    display: flex;
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 3px 14px rgba(60, 100, 170, 0.08);
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 12px;
+    flex-direction: row;
+    transition: transform 0.18s, box-shadow 0.22s;
+}
+
+.hotel-card:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 10px 32px rgba(60, 90, 170, 0.10);
+}
+
+.hotel-main-photo {
+    flex-shrink: 0;
+    width: 220px;
+    height: 220px;
+    background: #e9eefe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hotel-stars {
+    position: absolute;
+    top: 11px;
+    left: 13px;
+    z-index: 2;
+    display: flex;
+    gap: 2px;
+    pointer-events: none;
+}
+
+.hotel-stars .fa-star {
+    color: #ffcf47;
+    font-size: 1.18em;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.09));
+    text-shadow: 1px 1px 2px #fff8;
+}
+
+.hotel-main-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotel-info {
+    padding: 25px 30px 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.hotel-name {
+    font-size: 1.18rem;
+    color: #273057;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.hotel-address {
+    color: #4459b1;
+    font-size: 0.99rem;
+    margin-bottom: 11px;
+}
+
+.hotel-address i {
+    margin-right: 7px;
+}
+
+.hotel-desc {
+    color: #627294;
+    font-size: 0.98rem;
+    margin-bottom: 15px;
+    line-height: 1.44;
+}
+
+.hotel-gallery {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.hotel-gallery img {
+    width: 75px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 7px;
+    border: 1px solid #e7eaf9;
+    box-shadow: 0 2px 8px rgba(70, 100, 160, 0.05);
+}
+
+.hotel-choose-btn {
+    background: #4361ee;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    box-shadow: 0 2px 8px rgba(80, 120, 170, 0.07);
+    transition: background 0.18s, transform 0.14s;
+}
+
+.hotel-choose-btn:hover {
+    background: #3a47b1;
+    transform: scale(1.045);
+}
+
+@media (max-width: 900px) {
+    .hotel-list {
+        flex-direction: column;
+        gap: 24px 0;
+    }
+
+    .hotel-card {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .hotel-main-photo {
+        width: 100%;
+        height: 170px;
+        border-radius: 13px 13px 0 0;
+    }
+
+    .hotel-info {
+        padding: 18px 13px 22px 13px;
+    }
+
+    .hotel-gallery img {
+        width: 33vw;
+        max-width: 90px;
+        min-width: 55px;
+        height: 48px;
+    }
+
+    .hotel-stars {
+        left: 12px;
+        top: 9px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hotel-main-photo {
+        height: 120px;
+    }
+
+    .hotel-gallery img {
+        height: 36px;
+        width: 23vw;
+        min-width: 38px;
+    }
+
+    .hotel-stars {
+        left: 7px;
+        top: 6px;
+        font-size: 0.98em;
+    }
+}
+
+/* ========== Hotel search field styles ========== */
+.hotel-search-bar {
+    margin: 0 auto 28px auto;
+    max-width: 460px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.hotel-search-bar input[type="text"] {
+    flex: 1;
+    height: 44px;
+    border: 1.5px solid #b3c1eb;
+    padding: 0 15px;
+    font-size: 1.05rem;
+    border-radius: 25px 0 0 25px;
+    background: #fafdff;
+    color: #273057;
+    outline: none;
+    transition: border-color 0.22s;
+}
+
+.hotel-search-bar input[type="text"]:focus {
+    border-color: #4361ee;
+}
+
+.hotel-search-bar button {
+    height: 44px;
+    width: 54px;
+    border: none;
+    background: #4361ee;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+    font-size: 1.25em;
+    cursor: pointer;
+    transition: background 0.18s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hotel-search-bar button:hover {
+    background: #3f37c9;
+}
+
+@media (max-width: 600px) {
+    .hotel-search-bar {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hotel-search-bar input[type="text"] {
+        font-size: 0.98rem;
+        padding: 0 11px;
+        height: 37px;
+    }
+
+    .hotel-search-bar button {
+        height: 37px;
+        width: 42px;
+        font-size: 1.05em;
+    }
+}
+
+/* CSS DE MON PANNIER*/
+.cart-section {
+    padding: 40px 0 50px 0;
+    background: #f5f5f5;
+}
+
+.cart-section .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 16px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px 0 rgba(80, 100, 125, 0.07);
+}
+.monpannier_title {
+    margin-top: 50px;
+    padding-top: 2%;
+}
+.cart-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #4361ee;
+    font-size: 1.35rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cart-table-wrapper {
+    overflow-x: auto;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+    background: #fff;
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #ececec;
+    padding: 10px 9px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.cart-table th {
+    background: #e6ecfe;
+    font-weight: bold;
+    color: #3a479a;
+}
+
+.cart-qty-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.cart-qty-btn {
+    border: none;
+    background: #4361ee;
+    color: #fff;
+    border-radius: 5px;
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-qty-btn:hover {
+    background: #3f37c9;
+}
+
+.cart-qty-input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    color: #111;
+    pointer-events: none;
+}
+
+.cart-row-subtotal {
+    font-weight: 600;
+}
+
+.cart-order-btn {
+    display: block;
+    margin: 16px auto 0 auto;
+    background: #4361ee;
+    color: #fff;
+    border: none;
+    font-size: 1.12rem;
+    border-radius: 6px;
+    padding: 12px 36px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 6px 0 rgba(100, 120, 170, 0.08);
+    transition: background 0.2s, transform 0.18s;
+}
+
+.cart-order-btn:hover {
+    background: #3f37c9;
+    transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 600px) {
+    .cart-section .container {
+        max-width: 100%;
+        padding: 0 6px;
+    }
+
+    .cart-table,
+    .cart-table thead,
+    .cart-table tbody,
+    .cart-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table tr {
+        margin-bottom: 18px;
+        background: #fff;
+        border-radius: 7px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        border: 1px solid #ececec;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        padding: 6px 0;
+    }
+
+    .cart-table td {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 12px 8px;
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        min-height: 34px;
+    }
+
+    .cart-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: inline-block;
+        min-width: 100px;
+        color: #666;
+        margin-right: 12px;
+    }
+
+    .cart-table td:last-child {
+        border-bottom: none;
     }
 }

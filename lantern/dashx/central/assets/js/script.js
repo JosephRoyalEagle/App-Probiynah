@@ -87,16 +87,201 @@ function decreaseQty() {
 }
 
 // Responsive table: Add data-label attributes for small screens
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     function applyDataLabels() {
-      const table = document.querySelector('.product-table');
-      if(!table) return;
-      const ths = Array.from(table.querySelectorAll('thead th'));
-      table.querySelectorAll('tbody tr').forEach(row => {
-        Array.from(row.children).forEach((td, idx) => {
-          td.setAttribute('data-label', ths[idx] ? ths[idx].textContent : '');
+        const table = document.querySelector('.product-table');
+        if (!table) return;
+        const ths = Array.from(table.querySelectorAll('thead th'));
+        table.querySelectorAll('tbody tr').forEach(row => {
+            Array.from(row.children).forEach((td, idx) => {
+                td.setAttribute('data-label', ths[idx] ? ths[idx].textContent : '');
+            });
         });
-      });
     }
     applyDataLabels();
+});
+
+
+// JS DE MON PANNIER A MON  HOTEL
+// Cart logic
+const cartProducts = [
+  { name: "Produit A", price: 25, qty: 2 },
+  { name: "Produit B", price: 50, qty: 1 }
+];
+
+function updateCartTable() {
+  const tbody = document.querySelector('.cart-table tbody');
+  let rows = '';
+  cartProducts.forEach((prod, idx) => {
+    rows += `<tr>
+      <td>${prod.name}</td>
+      <td>${prod.price}&nbsp;€</td>
+      <td class="cart-qty-cell">
+        <button class="cart-qty-btn" onclick="updateCartQty(${idx},-1)">−</button>
+        <input type="number" class="cart-qty-input" value="${prod.qty}" min="1" readonly>
+        <button class="cart-qty-btn" onclick="updateCartQty(${idx},1)">+</button>
+      </td>
+      <td class="cart-row-subtotal">${(prod.price * prod.qty).toFixed(2).replace('.', ',')}&nbsp;€</td>
+    </tr>`;
+  });
+  tbody.innerHTML = rows;
+  updateCartTotals();
+  // Responsive: add data-label
+  const ths = Array.from(document.querySelectorAll('.cart-table thead th'));
+  tbody.querySelectorAll('tr').forEach(row => {
+    Array.from(row.children).forEach((td, idx) => {
+      td.setAttribute("data-label", ths[idx] ? ths[idx].textContent : "");
+    });
+  });
+}
+
+function updateCartTotals() {
+  // Sous-total
+  let subtotal = cartProducts.reduce((acc, prod) => acc + prod.price * prod.qty, 0);
+  let totalttc = subtotal * 1.2;
+  document.getElementById('cart-subtotal').innerHTML = `${subtotal.toFixed(2).replace('.', ',')}&nbsp;€`;
+  document.getElementById('cart-totaltc').innerHTML = `${totalttc.toFixed(2).replace('.', ',')}&nbsp;€`;
+}
+
+function updateCartQty(idx, delta) {
+  if (cartProducts[idx].qty + delta >= 1) {
+    cartProducts[idx].qty += delta;
+    updateCartTable();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Responsive product-table
+  function applyDataLabels() {
+    const table = document.querySelector('.product-table');
+    if(!table) return;
+    const ths = Array.from(table.querySelectorAll('thead th'));
+    table.querySelectorAll('tbody tr').forEach(row => {
+      Array.from(row.children).forEach((td, idx) => {
+        td.setAttribute('data-label', ths[idx] ? ths[idx].textContent : '');
+      });
+    });
+  }
+  applyDataLabels();
+
+  // Cart table initial
+  updateCartTable();
+
+  // Commander button (demo)
+  const orderBtn = document.querySelector('.cart-order-btn');
+  if(orderBtn) {
+    orderBtn.addEventListener('click',function() {
+      alert('Commande envoyée! (démo)');
+    })
+  }
+
+  // Add handler to restaurant choose buttons for demo
+  document.querySelectorAll('.restaurant-choose-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const card = btn.closest('.restaurant-card');
+      const name = card ? card.querySelector('.restaurant-name')?.textContent : '';
+      alert('Restaurant choisi : ' + name);
+    });
+  });
+
+  // Add handler to hotel choose buttons for demo
+  document.querySelectorAll('.hotel-choose-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const card = btn.closest('.hotel-card');
+      const name = card ? card.querySelector('.hotel-name')?.textContent : '';
+      alert('Hôtel choisi : ' + name);
+    });
+  });
+
+  // Render hotel stars
+  document.querySelectorAll('.hotel-stars').forEach(el => {
+    const stars = parseInt(el.getAttribute('data-stars') || "0", 10);
+    el.innerHTML = "";
+    for (let i = 0; i < stars; i++) {
+      el.innerHTML += '<i class="fas fa-star"></i>';
+    }
+    // option: else if wanted, a half star for non-integer ratings
+  });
+
+  // Render restaurant stars
+  document.querySelectorAll('.restaurant-stars').forEach(el => {
+    const stars = parseInt(el.getAttribute('data-stars') || "0", 10);
+    el.innerHTML = "";
+    for (let i = 0; i < stars; i++) {
+      el.innerHTML += '<i class="fas fa-star"></i>';
+    }
+  });
+
+  // Hotel search functionality
+  const hotelSearchInput = document.getElementById('hotel-search-input');
+  const hotelSearchBtn = document.getElementById('hotel-search-btn');
+  const hotelList = document.getElementById('hotel-list');
+  if (hotelSearchInput && hotelList) {
+    function filterHotels() {
+      const searchVal = hotelSearchInput.value.trim().toLowerCase();
+      const cards = Array.from(hotelList.querySelectorAll('.hotel-card'));
+      cards.forEach(card => {
+        // Recherche sur le nom, adresse et description
+        const name = (card.getAttribute('data-hotel-name') || "").toLowerCase();
+        const address = (card.getAttribute('data-hotel-address') || "").toLowerCase();
+        const desc = (card.getAttribute('data-hotel-desc') || "").toLowerCase();
+        if (!searchVal
+          || name.includes(searchVal)
+          || address.includes(searchVal)
+          || desc.includes(searchVal)
+        ) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+    hotelSearchInput.addEventListener('input', filterHotels);
+    hotelSearchBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      filterHotels();
+      hotelSearchInput.focus();
+    });
+    hotelSearchInput.addEventListener('keypress', function(e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        filterHotels();
+      }
+    });
+  }
+
+  // =========== Restaurant search functionality ===========
+  const restaurantSearchInput = document.getElementById('restaurant-search-input');
+  const restaurantSearchBtn = document.getElementById('restaurant-search-btn');
+  const restaurantList = document.getElementById('restaurant-list');
+  if (restaurantSearchInput && restaurantList) {
+    function filterRestaurants() {
+      const searchVal = restaurantSearchInput.value.trim().toLowerCase();
+      const cards = Array.from(restaurantList.querySelectorAll('.restaurant-card'));
+      cards.forEach(card => {
+        const name = (card.getAttribute('data-restaurant-name') || "").toLowerCase();
+        const desc = (card.getAttribute('data-restaurant-desc') || "").toLowerCase();
+        if (!searchVal
+          || name.includes(searchVal)
+          || desc.includes(searchVal)
+        ) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+    restaurantSearchInput.addEventListener('input', filterRestaurants);
+    restaurantSearchBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      filterRestaurants();
+      restaurantSearchInput.focus();
+    });
+    restaurantSearchInput.addEventListener('keypress', function(e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        filterRestaurants();
+      }
+    });
+  }
 });
