@@ -62,7 +62,7 @@
                             <!-- Product Card 1 -->
                             <div class="card product-card">
                                 <div class="product-image">
-                                    <img src="1.jpg" alt="Produit 1">
+                                    <img src="assets/img/1.jpg" alt="Produit 1">
                                 </div>
                                 <div class="product-details">
                                     <h3 class="product-name">Smartphone Premium</h3>
@@ -86,7 +86,7 @@
                             <!-- Product Card 2 -->
                             <div class="card product-card">
                                 <div class="product-image">
-                                    <img src="1.jpg" alt="Produit 1">
+                                    <img src="assets/img/1.jpg" alt="Produit 1">
                                 </div>
                                 <div class="product-details">
                                     <h3 class="product-name">Smartphone Premium</h3>
@@ -109,7 +109,7 @@
                             <!-- Product Card 3 -->
                             <div class="card product-card">
                                 <div class="product-image">
-                                    <img src="1.jpg" alt="Produit 1">
+                                    <img src="assets/img/1.jpg" alt="Produit 1">
                                 </div>
                                 <div class="product-details">
                                     <h3 class="product-name">Smartphone Premium</h3>
@@ -135,10 +135,56 @@
                     <!-- Divider -->
                     <div class="divider"></div>
 
-                    <!-- Section: Tableau des produits -->
-                    <section class="dashboard-section">
-                        <h2 class="section-title"><i class="fas fa-list-alt"></i> Liste des Produits</h2>
-                        <div class="card">
+                    <section class="product-table-section">
+                        <div class="container">
+                        <h2>Nos Produits</h2>
+                        <table class="product-table">
+                            <thead>
+                                <tr>
+                                    <th>Produit</th>
+                                    <th>Description</th>
+                                    <th>Categorie</th>
+                                    <th>Prix</th>
+                                    <th>Prime</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Produit A</td>
+                                    <td>Lorem ipsum dolor sit amet</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>
+                                        <button class="btn btn-primary"><i class="fas fa-edit"></i></i></button>&nbsp;&nbsp;
+                                        <button class="btn btn-danger"><i class="fas fa-trash"></i></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Produit B</td>
+                                    <td>Consectetur adipiscing elit</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>
+                                        <button class="btn btn-primary"><i class="fas fa-edit"></i></i></button>&nbsp;&nbsp;
+                                        <button class="btn btn-danger"><i class="fas fa-trash"></i></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Produit C</td>
+                                    <td>Sed do eiusmod tempor</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>25&nbsp;€</td>
+                                    <td>
+                                        <button class="btn btn-primary"><i class="fas fa-edit"></i></i></button>&nbsp;&nbsp;
+                                        <button class="btn btn-danger"><i class="fas fa-trash"></i></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                         </div>
                     </section>
 
@@ -199,7 +245,7 @@
 
                                 <div class="form-actions justify-content-center">
                                     <button type="submit" class="submit-btn">
-                                        <i class="fas fa-save"></i> Enregistrer le produit
+                                        <i class="fas fa-save"></i> Enregistrer
                                     </button>
                                 </div>
                             </form>

@@ -74,31 +74,6 @@ document.getElementById('product-image').addEventListener('change', function (e)
     }
 });
 
-// Gestion de la soumission du formulaire
-document.getElementById('product-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Récupération des valeurs du formulaire
-    const productData = {
-        name: document.getElementById('product-name').value,
-        price: document.getElementById('product-price').value,
-        category: document.getElementById('product-category').value,
-        description: document.getElementById('product-description').value,
-        image: document.getElementById('product-image').files[0]?.name || 'Aucune image'
-    };
-
-    // Ici vous pouvez ajouter le code pour envoyer les données au serveur
-    console.log('Produit à enregistrer:', productData);
-
-    // Affichage d'un message de succès (vous pouvez personnaliser cela)
-    alert('Produit enregistré avec succès!');
-
-    // Réinitialisation du formulaire
-    this.reset();
-    document.getElementById('image-preview').style.display = 'none';
-    document.querySelector('.file-name').textContent = 'Aucun fichier sélectionné';
-});
-
 function increaseQty() {
     const qtyInput = document.getElementById("quantity");
     qtyInput.value = parseInt(qtyInput.value) + 1;
@@ -110,3 +85,18 @@ function decreaseQty() {
         qtyInput.value = parseInt(qtyInput.value) - 1;
     }
 }
+
+// Responsive table: Add data-label attributes for small screens
+document.addEventListener("DOMContentLoaded", function() {
+    function applyDataLabels() {
+      const table = document.querySelector('.product-table');
+      if(!table) return;
+      const ths = Array.from(table.querySelectorAll('thead th'));
+      table.querySelectorAll('tbody tr').forEach(row => {
+        Array.from(row.children).forEach((td, idx) => {
+          td.setAttribute('data-label', ths[idx] ? ths[idx].textContent : '');
+        });
+      });
+    }
+    applyDataLabels();
+});
