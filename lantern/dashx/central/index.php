@@ -521,45 +521,49 @@
 
                 <div class="divider"></div>
 
-                <!-- SECTION RESTAURANTS -->
                 <section class="restaurant-section">
                     <div class="container">
                         <h2>Nos Restaurants</h2>
-                        <div class="restaurant-list">
-                            <div class="restaurant-card">
+                        <div class="restaurant-search-bar">
+                            <input type="text" id="restaurant-search-input" placeholder="Rechercher un restaurant, une spécialité, une ville..." autocomplete="off">
+                            <button id="restaurant-search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="restaurant-list" id="restaurant-list">
+                            <div class="restaurant-card" data-stars="5" data-restaurant-name="Le Gourmet" data-restaurant-desc="Cuisine française moderne dans un cadre élégant, vins raffinés et spécialités du terroir.">
                                 <div class="restaurant-photo">
+                                    <div class="restaurant-stars" data-stars="5"></div>
                                     <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Restaurant Le Gourmet">
                                 </div>
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">Le Gourmet</h3>
                                     <p class="restaurant-address"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 12 avenue Victor Hugo, 75016 Paris</p>
                                     <p class="restaurant-desc">Cuisine française moderne dans un cadre élégant, vins raffinés et spécialités du terroir.</p>
-
                                     <button class="restaurant-choose-btn">
                                         <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
                             </div>
-                            <div class="restaurant-card">
+                            <div class="restaurant-card" data-stars="4" data-restaurant-name="La Dolce Vita" data-restaurant-desc="Saveurs italiennes : pizzas au feu de bois et pâtes fraîches dans une ambiance chaleureuse.">
                                 <div class="restaurant-photo">
+                                    <div class="restaurant-stars" data-stars="4"></div>
                                     <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80" alt="Restaurant La Dolce Vita">
                                 </div>
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">La Dolce Vita</h3>
-                                    <p class="restaurant-address"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 7 rue Pizetta, 69002 Lyon</p>
+                                    <p class="restaurant-address"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 12 avenue Victor Hugo, 75016 Paris</p>
                                     <p class="restaurant-desc">Saveurs italiennes : pizzas au feu de bois et pâtes fraîches dans une ambiance chaleureuse.</p>
                                     <button class="restaurant-choose-btn">
                                         <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
                             </div>
-                            <div class="restaurant-card">
+                            <div class="restaurant-card" data-stars="3" data-restaurant-name="Sushi Zen" data-restaurant-desc="Bar à sushis zen, poissons ultra frais, makis et spécialités japonaises à volonté.">
                                 <div class="restaurant-photo">
+                                    <div class="restaurant-stars" data-stars="3"></div>
                                     <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Sushi Zen">
                                 </div>
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">Sushi Zen</h3>
-                                    <p class="restaurant-address"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 21 allée des Oliviers, 13008 Marseille</p>
+                                    <p class="restaurant-address"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 12 avenue Victor Hugo, 75016 Paris</p>
                                     <p class="restaurant-desc">Bar à sushis zen, poissons ultra frais, makis et spécialités japonaises à volonté.</p>
-
                                     <button class="restaurant-choose-btn">
                                         <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
@@ -567,6 +571,8 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- SECTION RESTAURANTS -->
 
                 <div class="divider"></div>
 
