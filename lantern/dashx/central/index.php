@@ -5,7 +5,7 @@
     <?php
     require "head.php";
     ?>
-    <title>Superviseur - Probiynah App</title>
+    <title>Administration - Probiynah App</title>
 </head>
 
 <body>
