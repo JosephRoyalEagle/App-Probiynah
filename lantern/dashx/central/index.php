@@ -532,8 +532,9 @@
                                 </div>
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">Le Gourmet</h3>
-                                    <p class="restaurant-desc">Cuisine française moderne dans un cadre élégant, vins raffinés et spécialités du terroir.</p>
                                     <p class="restaurant-address"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 12 avenue Victor Hugo, 75016 Paris</p>
+                                    <p class="restaurant-desc">Cuisine française moderne dans un cadre élégant, vins raffinés et spécialités du terroir.</p>
+
                                     <button class="restaurant-choose-btn">
                                         <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
@@ -544,8 +545,8 @@
                                 </div>
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">La Dolce Vita</h3>
-                                    <p class="restaurant-desc">Saveurs italiennes : pizzas au feu de bois et pâtes fraîches dans une ambiance chaleureuse.</p>
                                     <p class="restaurant-address"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 7 rue Pizetta, 69002 Lyon</p>
+                                    <p class="restaurant-desc">Saveurs italiennes : pizzas au feu de bois et pâtes fraîches dans une ambiance chaleureuse.</p>
                                     <button class="restaurant-choose-btn">
                                         <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
@@ -556,8 +557,9 @@
                                 </div>
                                 <div class="restaurant-info">
                                     <h3 class="restaurant-name">Sushi Zen</h3>
-                                    <p class="restaurant-desc">Bar à sushis zen, poissons ultra frais, makis et spécialités japonaises à volonté.</p>
                                     <p class="restaurant-address"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> 21 allée des Oliviers, 13008 Marseille</p>
+                                    <p class="restaurant-desc">Bar à sushis zen, poissons ultra frais, makis et spécialités japonaises à volonté.</p>
+
                                     <button class="restaurant-choose-btn">
                                         <i class="fas fa-arrow-right"></i> Entrer</button>
                                 </div>
