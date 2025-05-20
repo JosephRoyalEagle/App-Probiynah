@@ -61,6 +61,10 @@
             <a href="#"><i class="fas fa-fw fa-file-invoice"></i><span>Devis</span></a>
         </li>
         <li>
+            <a href="#"><i class="fas fa-fw fa-file-invoice"></i><span>Meilleur client</span></a>
+        </li>
+        
+        <li>
             <a href="#"><i class="fas fa-fw fa-cog"></i><span>Paramètres</span></a>
         </li>
         <li>
