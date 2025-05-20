@@ -341,7 +341,6 @@
 
                 <div class="divider"></div>
 
-
                 <!-- SECTION PANIER -->
                 <section class="cart-section">
                     <div class="container">
@@ -397,8 +396,9 @@
                             <i class="fas fa-shopping-cart"></i> Commander</button>
                     </div>
                 </section>
+
                 <div class="divider"></div>
-                <!-- Divider -->
+
                 <!-- SECTION CARTE ADRESSE -->
                 <section class="address-card-section">
                     <div class="container">
@@ -512,16 +512,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="acf-action-row">
-                                <button type="submit" class="acf-submit-btn">
-                                    <i class="fas fa-arrow-right"></i> Poursuivre</button>
+                            <div class="acf-action-row justify-content-center">
+                                <button type="submit" class="acf-submit-btn"><i class="fas fa-arrow-right"></i> Poursuivre</button>
                             </div>
                         </form>
                     </div>
                 </section>
 
                 <div class="divider"></div>
-                <!-- SECTION RESTAURANTS -->
+
                 <section class="restaurant-section">
                     <div class="container">
                         <h2>Nos Restaurants</h2>
@@ -569,9 +568,9 @@
                         </div>
                     </div>
                 </section>
-                <!-- SECTION RESTAURANTS -->
+
                 <div class="divider"></div>
-                <!-- SECTION HOTELS -->
+
                 <section class="hotel-section">
                     <div class="container">
                         <h2>Nos Hôtels</h2>
