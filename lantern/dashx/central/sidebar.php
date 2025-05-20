@@ -31,7 +31,7 @@
             <a href="#"><i class="fas fa-fw fa-wallet"></i><span>Portefeuille</span></a>
         </li>
         <li>
-            <a href="#"><i class="fas fa-fw fa-utensils"></i><span>Restaurant</span></a>
+            <a href="#"><i class="fas fa-fw fa-utensils"></i><span>Restaurants</span></a>
         </li>
         <li>
             <a href="#"><i class="fas fa-fw fa-table"></i><span>Tables</span></a>
@@ -40,7 +40,7 @@
             <a href="#"><i class="fas fa-fw fa-chart-line"></i><span>Ventes réalisées</span></a>
         </li>
         <li>
-            <a href="#"><i class="fas fa-fw fa-hotel"></i><span>Hotel</span></a>
+            <a href="#"><i class="fas fa-fw fa-hotel"></i><span>Hotels</span></a>
         </li>
         <li>
             <a href="#"><i class="fas fa-fw fa-bed"></i><span>Chambres</span></a>
@@ -55,17 +55,13 @@
             <a href="#"><i class="fas fa-fw fa-map"></i><span>Carte adresse</span></a>
         </li>
         <li>
-            <a href="#"><i class="fas fa-fw fa-calendar-check"></i><span>Reservation</span></a>
+            <a href="#"><i class="fas fa-fw fa-calendar-check"></i><span>Reservations</span></a>
         </li>
         <li>
             <a href="#"><i class="fas fa-fw fa-file-invoice"></i><span>Devis</span></a>
         </li>
         <li>
-            <a href="#"><i class="fas fa-fw fa-user-tie"></i><span>Meilleur client</span></a>
-        </li>
-        
-        <li>
-            <a href="#"><i class="fas fa-fw fa-cog"></i><span>Paramètres</span></a>
+            <a href="#"><i class="fas fa-fw fa-user-tie"></i><span>Meilleurs clients</span></a>
         </li>
         <li>
             <a href="#"><i class="fas fa-fw fa-sign-out-alt"></i><span>Se déconnecter</span></a>
