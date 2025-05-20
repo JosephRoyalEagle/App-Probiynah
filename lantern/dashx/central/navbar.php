@@ -9,5 +9,6 @@
         <div class="user-cart-avatar"><i class="fas fa-cart-shopping"></i><span>3</span></div>
         <div class="service-client-avatar"><i class="fas fa-headset"></i></div>
         <div class="user-avatar"><i class="fas fa-user"></i></div>
+        <div class="logout-avatar"><i class="fas fa-sign-out-alt"></i></div>
     </div>
 </div>

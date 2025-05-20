@@ -49,6 +49,9 @@
             <a href="#"><i class="fas fa-fw fa-users"></i><span>Clients</span></a>
         </li>
         <li>
+            <a href="#"><i class="fas fa-fw fa-headset"></i><span>Service Client</span></a>
+        </li>
+        <li>
             <a href="#"><i class="fas fa-fw fa-coins"></i><span>Dépenses</span></a>
         </li>
         <li>
