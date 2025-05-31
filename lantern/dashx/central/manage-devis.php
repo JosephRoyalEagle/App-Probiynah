@@ -370,7 +370,6 @@
                     });
                 });
 
-                /*
                 // Modifier
                 $(document).on("click", "#btn-sub-updateprod", function() {
                     // Récupérer les données du formulaire 
@@ -428,7 +427,6 @@
                 $(document).on('click', '.btn-close-modal-reloaded', function () {
                     window.location.reload();
                 });
-                */
             });
         })(jQuery);
     </script>
