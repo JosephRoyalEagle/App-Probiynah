@@ -71,8 +71,8 @@
                                                                     </div>
 
                                                                     <div class="form-group mb-3">
-                                                                        <label for="imageProd">Logo emetteur (*.png, *.jpg, *.jpeg)</label>
-                                                                        <input type="file" id="imageProd" name="imageProd" class="form-control" accept=".png, .jpg, .jpeg, image/png, image/jpeg">
+                                                                        <label for="imageDevis">Logo emetteur (*.png, *.jpg, *.jpeg)</label>
+                                                                        <input type="file" id="imageDevis" name="imageDevis" class="form-control" accept=".png, .jpg, .jpeg, image/png, image/jpeg">
                                                                     </div>
 
                                                                     <div class="form-group mb-3">
@@ -381,7 +381,7 @@
 
                     // Appel Ajax pour envoyer les données
                     $.ajax({
-                        url: 'manage-product-update-dv.php',
+                        url: 'manage-devis-update-dv.php',
                         type: 'POST',
                         data: formDataSubmit,
                         processData: false,

@@ -42,17 +42,17 @@
     }
 
     $uniqueFilename = null;
-    if (isset($_FILES['imageProd']) && $_FILES['imageProd']['error'] === 0) {
+    if (isset($_FILES['imageDevis']) && $_FILES['imageDevis']['error'] === 0) {
         $allowedTypes = ['image/png', 'image/jpeg', 'image/jpg'];
         $fileInfo = finfo_open(FILEINFO_MIME_TYPE);
-        $mimeType = finfo_file($fileInfo, $_FILES['imageProd']['tmp_name']);
+        $mimeType = finfo_file($fileInfo, $_FILES['imageDevis']['tmp_name']);
         finfo_close($fileInfo);
 
         if (!in_array($mimeType, $allowedTypes)) {
             send_json_response(['msg' => "Format d'image non autorisé. Formats acceptés : PNG, JPG, JPEG."]);
         }
 
-        $extension = pathinfo($_FILES['imageProd']['name'], PATHINFO_EXTENSION);
+        $extension = pathinfo($_FILES['imageDevis']['name'], PATHINFO_EXTENSION);
         $allowedExts = ['jpg', 'jpeg', 'png'];
         if (!in_array(strtolower($extension), $allowedExts)) {
             send_json_response(['msg' => "Extension de fichier non autorisée."]);
@@ -162,7 +162,7 @@
         ]);
 
         if ($uniqueFilename) {
-            $tmpFile = $_FILES['imageProd']['tmp_name'];
+            $tmpFile = $_FILES['imageDevis']['tmp_name'];
             if (!resizeImageToHeight($tmpFile, $uploadPath, 30)) {
                 $db_host->rollBack();
                 send_json_response(['msg' => "L'image est invalide ou ne peut pas être traitée."]);

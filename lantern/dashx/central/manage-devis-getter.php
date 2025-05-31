@@ -208,8 +208,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                                         </div>
 
                                                         <div class="form-group mb-3">
-                                                            <label for="imageProd">Logo emetteur (*.png, *.jpg, *.jpeg)</label>
-                                                            <input type="file" id="imageProd" name="imageProd" class="form-control" accept=".png, .jpg, .jpeg, image/png, image/jpeg">
+                                                            <label for="imageDevis">Logo emetteur (*.png, *.jpg, *.jpeg)</label>
+                                                            <input type="file" id="imageDevis" name="imageDevis" class="form-control" accept=".png, .jpg, .jpeg, image/png, image/jpeg">
                                                         </div>
 
                                                         <div class="form-group mb-3">

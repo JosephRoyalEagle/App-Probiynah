@@ -23,7 +23,8 @@
         }
 
         // Sauvegarde de l'ancien nom du produit
-        $oldFile = "../../uploads/products/".$count_account_1['image_prod'];
+        $pictureFile = trim($count_account_1['image_prod']);
+        $oldFile = "../../uploads/products/".$pictureFile;
     
         // Validation des données
         if (isset($_POST['designationProd']) && !empty($_POST['designationProd']) && strlen($_POST['designationProd']) >= 2 && strlen($_POST['designationProd']) <= 50) {
@@ -110,7 +111,7 @@
 
                         if ($success) {
                             // Suppression de l'ancienne image du produit du dossier
-                            if (file_exists($oldFile) && unlink($oldFile)) {
+                            if (!empty($pictureFile) && unlink($oldFile)) {
                                 // TOUT EST OK
                             }
                         }
